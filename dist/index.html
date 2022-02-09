@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>Sequences Sunburst</title>
+<link rel="stylesheet" type="text/css" href="./inspector.css" />
+<body>
+  <style>
+    body {
+      width: 100%;
+    }
+    span {
+      visibility: hidden;
+      height: 0;
+      display: block;
+    }
+    svg {
+      display: block;
+      margin: auto;
+    }
+  </style>
+  <script type="module">
+    import define from "./index.js";
+    import { Runtime, Library, Inspector } from "./runtime.js";
+
+    const runtime = new Runtime();
+    const main = runtime.module(define, Inspector.into(document.body));
+  </script>
+</body>
